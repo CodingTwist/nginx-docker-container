@@ -5,6 +5,7 @@ RUN apk add php83 php83-xml php83-exif php83-fpm php83-session php83-soap php83-
 COPY --from=composer:latest  /usr/bin/composer /usr/bin/composer
 
 RUN apk add --no-cache nginx-mod-http-lua
+RUN pecl install luasandbox
 
 USER container
 ENV  USER container
