@@ -26,4 +26,4 @@ jobs:
           platforms: linux/amd64,linux/arm64
           push: true
           tags: |
-            ghcr.io/helkor-eu/nginx-docker-container:8.3
+            ghcr.io/codingtwist/nginx-docker-container:8.3
