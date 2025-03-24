@@ -13,6 +13,10 @@ ENV  USER container
 ENV HOME /home/container
 ENV PHP_VER 83
 
+# Modify php.ini for max file size
+RUN sed -i 's/upload_max_filesize = .*/upload_max_filesize = 100M/' /etc/php83/php.ini && \
+    sed -i 's/post_max_size = .*/post_max_size = 100M/' /etc/php83/php.ini
+
 WORKDIR /home/container
 COPY ./entrypoint.sh /entrypoint.sh
 
